@@ -26,7 +26,7 @@ public class SocialMediaApplication {
 		PostList postList=(PostList)applicationContext.getBean("postList");
 
 		while (true) {
-			System.out.println("choose option:\n1. create post \n2. see all post");
+			System.out.println("choose option:\n1. create post \n2. see all post \n3. Exit");
 			int userSelect=sc.nextInt();
 
 			switch (userSelect) {
@@ -40,6 +40,10 @@ public class SocialMediaApplication {
 					break;
 				case 2:
 					postList.getPost().forEach(item->{System.out.println(item.getMessage());});
+					break;
+
+				case 3:
+					applicationContext.close();
 					break;
 				
 			}
